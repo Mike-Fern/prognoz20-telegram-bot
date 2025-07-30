@@ -1,7 +1,11 @@
 services:
   - type: web
     name: prognoz20-bot
-    env: python
+    env: docker
+    repo: https://github.com/Mike-Fern/prognoz20-telegram-bot
     plan: free
-    buildCommand: pip install -r requirements.txt
-    startCommand: python main.py
+    envVars:
+      - key: BOT_TOKEN
+        value: 8409083125:AAEMzlb_1RSGOAKKZXwbmv6PdFH3Z9ajlg0
+      - key: REDIRECT_URL
+        value: https://1win.site/casino?open=register
